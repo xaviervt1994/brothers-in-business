@@ -101,3 +101,51 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+.quote {
+  padding: 2rem;
+  background: white;
+  margin: 1rem auto;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quote form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.quote input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.quote button {
+  padding: 0.75rem;
+  background-color: #6fa040;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quote button:hover {
+  background-color: #5b8a36;
+}
+
+#form-response {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.hidden {
+  display: none;
+}
