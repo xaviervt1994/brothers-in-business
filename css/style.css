@@ -8,12 +8,12 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #2c3e50;
-  background-color: #f4f4f4;
+  background-color: #f5f7f2; /* subtle warm tone */
 }
 
 .logo {
   width: 700px;
-  max-width: 90vw; /* keeps it responsive on smaller screens */
+  max-width: 90vw;
   height: auto;
   display: block;
   margin-left: auto;
@@ -68,16 +68,41 @@ footer {
   background-color: #e5961e;
 }
 
+/* Alternate background colors for section flow */
+.about {
+  background-color: #ffffff;
+}
+
+.services {
+  background-color: #f9f9f2;
+}
+
+.gallery {
+  background-color: #ffffff;
+}
+
+.quote {
+  background-color: #f0f5eb;
+}
+
+/* Shared card section layout */
 .about,
 .services,
 .gallery,
+.quote,
 footer {
   padding: 2rem;
-  background: white;
   margin: 1rem auto;
   max-width: 900px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Accent heading style */
+section h2 {
+  border-left: 4px solid #6fa040;
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .services ul {
@@ -108,15 +133,6 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
-
-.quote {
-  padding: 2rem;
-  background: white;
-  margin: 1rem auto;
-  max-width: 900px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .quote form {
