@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: #2c3e50;
   background-color: #f5f7f2; /* subtle warm tone */
@@ -47,6 +47,18 @@ body {
 .hero p {
   margin-bottom: 1rem;
   font-size: 1rem;
+}
+
+.hero h1,
+section h2 {
+  font-weight: 700;
+}
+
+.hero p,
+body,
+.quote p,
+footer {
+  font-weight: 400;
 }
 
 footer {
