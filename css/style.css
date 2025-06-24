@@ -32,6 +32,13 @@ body {
   pointer-events: none;
 }
 
+/* --- ADD THIS RULE --- */
+/* This specifically targets and hides the default video controls in WebKit browsers like Safari on iOS */
+.hero-video::-webkit-media-controls {
+  display: none !important;
+}
+/* --- END OF ADDITION --- */
+
 .hero-overlay {
   position: absolute;
   top: 0;
