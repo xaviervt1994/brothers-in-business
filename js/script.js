@@ -22,11 +22,26 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      emailjs
-        .sendForm("service_ykud4sz", "template_ccwj6mm", this)
+      // Send email notification
+      const sendEmail = emailjs.sendForm(
+        "service_ykud4sz",
+        "template_ccwj6mm", // your main email template ID
+        this
+      );
+
+      // Send SMS via email-to-text
+      const sendSMS = emailjs.sendForm(
+        "service_ykud4sz",
+        "template_qqd8j1c", // replace with your actual SMS template ID
+        this
+      );
+
+      // Wait for both to finish
+      Promise.all([sendEmail, sendSMS])
         .then(() => {
           form.reset();
           responseMsg.classList.remove("hidden");
+          console.log("✅ Email and SMS sent successfully");
         })
         .catch((error) => {
           console.error("EmailJS error:", error);
