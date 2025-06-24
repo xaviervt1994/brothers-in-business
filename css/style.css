@@ -12,16 +12,12 @@ body {
 }
 
 .logo {
-  width: 140px;
-  height: 140px;
-  object-fit: contain;
+  width: 160px;
+  height: auto;
   display: block;
   margin: 0 auto 1rem;
+  object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
-  border-radius: 50%;
-  background-color: white;
-  padding: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero {
