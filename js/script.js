@@ -64,3 +64,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("quote-form");
+  const responseMsg = document.getElementById("form-response");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ykud4sz",
+        "template_ccwj6mm",
+        this,
+        "MLP2cY1l2vofDSGsL"
+      )
+      .then(
+        function () {
+          form.reset();
+          responseMsg.classList.remove("hidden");
+        },
+        function (error) {
+          console.error("FAILED...", error);
+          alert(
+            "There was a problem submitting your request. Please try again."
+          );
+        }
+      );
+  });
+});

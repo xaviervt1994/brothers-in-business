@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brothers in Business: Lawn-Care</title>
-    <!-- Link to your existing stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
@@ -13,7 +12,9 @@
   </head>
   <body>
     <header class="hero">
-      <!-- Ensure the 'playsinline' attribute is present for iOS -->
+      <!-- Background fallback for non-autoplay devices -->
+      <div class="hero-fallback"></div>
+
       <video class="hero-video" autoplay muted loop playsinline preload="auto">
         <source src="assets/lawn-bg-autoplay-safe.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -58,25 +59,23 @@
 
     <section class="gallery">
       <h2>Our Work</h2>
-      <div class="images">
-        <img
-          src="https://images.unsplash.com/photo-1689728318937-17d24bc0a65c?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Lawn Care 1"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1734303023518-71e656574f50?q=80&w=2142&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Lawn Care 3"
-        />
+      <div class="gallery-columns">
+        <div class="before">
+          <h3>Before</h3>
+          <img src="assets/IMG_5592.jpeg" alt="Before Work 1" />
+          <img src="assets/IMG_5593.jpeg" alt="Before Work 2" />
+        </div>
+        <div class="after">
+          <h3>After</h3>
+          <img src="assets/IMG_5594.jpeg" alt="After Work 1" />
+          <img src="assets/IMG_5595.jpeg" alt="After Work 2" />
+        </div>
       </div>
     </section>
 
     <section class="quote">
       <h2>Request a Free Quote</h2>
-      <form
-        id="quote-form"
-        action="https://formspree.io/f/xovwpayl"
-        method="POST"
-      >
+      <form id="quote-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
 
@@ -103,7 +102,10 @@
       <p>Phone: <a href="tel:2547599826">(254) 759-9826</a></p>
     </footer>
 
-    <!-- Link to the new external JavaScript file. 'defer' ensures it runs after the HTML is parsed. -->
     <script src="js/main.js" defer></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      emailjs.init("MLP2cY1l2vofDSGsL");
+    </script>
   </body>
 </html>
