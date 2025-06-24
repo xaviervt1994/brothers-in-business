@@ -12,15 +12,15 @@ body {
 }
 
 .logo {
-  width: 160px;
-  max-width: 90%;
-  height: auto;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
   display: block;
   margin: 0 auto 1rem;
   image-rendering: -webkit-optimize-contrast;
   border-radius: 50%;
   background-color: white;
-  padding: 8px;
+  padding: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,6 +29,20 @@ body {
   color: white;
   text-align: center;
   padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+footer {
+  text-align: center;
 }
 
 .call-button {
@@ -73,9 +87,10 @@ footer {
 
 .gallery img {
   width: 100%;
-  max-width: 280px;
-  border-radius: 8px;
+  max-width: 260px;
+  height: 180px;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 footer a {
