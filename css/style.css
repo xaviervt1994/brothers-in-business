@@ -12,12 +12,11 @@ body {
 }
 
 .logo {
-  width: 160px;
+  width: 700px;
   height: auto;
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
   object-fit: contain;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .hero {
