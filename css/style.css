@@ -150,6 +150,7 @@ body {
   font-weight: 700;
 }
 
+/* REVIEW ITEM */
 .testimonial {
   display: flex;
   align-items: flex-start;
@@ -157,14 +158,17 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.testimonial img {
+/* PROFILE IMAGE FIX */
+.review-photo {
   width: 60px;
   height: 60px;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
   border: 2px solid #6fa040;
 }
 
+/* TEXT STYLES */
 .testimonial h3 {
   margin: 0;
   font-size: 1rem;
@@ -175,6 +179,18 @@ body {
   margin-top: 0.25rem;
   font-size: 0.95rem;
   color: #555;
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 500px) {
+  .testimonial {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .testimonial p {
+    font-size: 0.9rem;
+  }
 }
 
 .about,
