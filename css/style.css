@@ -134,6 +134,49 @@ body {
   background-color: #f0f5eb;
 }
 
+.testimonials {
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials h2 {
+  border-left: 4px solid #6fa040;
+  padding-left: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.testimonial {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #6fa040;
+}
+
+.testimonial h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.testimonial p {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
 .about,
 .services,
 .gallery,
