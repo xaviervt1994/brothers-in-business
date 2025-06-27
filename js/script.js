@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      // --- HONEYPOT CHECK ---
+      const honeypot = document.getElementById("company");
+      if (honeypot && honeypot.value.trim() !== "") {
+        console.warn("🛑 Spam detected: honeypot field was filled.");
+        return; // Block spam submissions
+      }
+
       // Send email notification
       const sendEmail = emailjs.sendForm(
         "service_ykud4sz",
@@ -32,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Send SMS via email-to-text
       const sendSMS = emailjs.sendForm(
         "service_ykud4sz",
-        "template_qqd8j1c", // replace with your actual SMS template ID
+        "template_qqd8j1c", // your SMS template ID
         this
       );
 

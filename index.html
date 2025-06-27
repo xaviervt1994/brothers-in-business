@@ -93,13 +93,13 @@
       <div class="gallery-columns">
         <div class="before">
           <h3>Before</h3>
-          <img src="assets/IMG_5592.jpeg" alt="Before Work 1" />
-          <img src="assets/IMG_5593.jpeg" alt="Before Work 2" />
+          <img src="assets/before2.jpeg" alt="Before Work 1" />
+          <img src="assets/before1.jpeg" alt="Before Work 2" />
         </div>
         <div class="after">
           <h3>After</h3>
-          <img src="assets/IMG_5594.jpeg" alt="After Work 1" />
-          <img src="assets/IMG_5595.jpeg" alt="After Work 2" />
+          <img src="assets/after2.jpeg" alt="After Work 1" />
+          <img src="assets/after1.jpeg" alt="After Work 2" />
         </div>
       </div>
     </section>
@@ -149,6 +149,12 @@
 
         <label for="address">Address:</label>
         <input type="text" id="address" name="address" required />
+
+        <!-- Honeypot field (spam trap) -->
+        <div style="display: none">
+          <label for="company">Company (leave blank)</label>
+          <input type="text" id="company" name="company" autocomplete="off" />
+        </div>
 
         <button type="submit">Request a Quote</button>
         <p id="form-response" class="hidden">✅ Thanks! Expect a call soon.</p>
