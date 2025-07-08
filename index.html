@@ -621,7 +621,7 @@
 
           // --- HONEYPOT SPAM CHECK ---
           if (document.getElementById("company").value.trim() !== "") {
-            console.warn("Spam detected: honeypot field was filled.");
+            console.warn("Spam detected: hone_ypot field was filled.");
             return; // Block spam submissions
           }
 
@@ -630,11 +630,10 @@
           const emailTemplateID = "template_ccwj6mm"; // Your main email template
           const smsTemplateID = "template_qqd8j1c"; // Your SMS template
 
-          // Promise to send the email
-          const sendEmail = emailjs.sendForm(serviceID, emailTemplateID, this);
-
-          // Promise to send the SMS
-          const sendSMS = emailjs.sendForm(serviceID, smsTemplateID, this);
+          // --- THE FIX IS HERE ---
+          // We are using the 'form' variable directly instead of 'this'
+          const sendEmail = emailjs.sendForm(serviceID, emailTemplateID, form);
+          const sendSMS = emailjs.sendForm(serviceID, smsTemplateID, form);
 
           // Wait for both promises to complete
           Promise.all([sendEmail, sendSMS])
