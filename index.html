@@ -597,6 +597,43 @@
     </script>
 
     <script>
+      // Form submission handling
+      document
+        .getElementById("quote-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Check honeypot
+          if (document.getElementById("company").value !== "") {
+            return; // Likely spam
+          }
+
+          const templateParams = {
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            address: document.getElementById("address").value,
+          };
+
+          // Send email via EmailJS (using your existing service configuration)
+          emailjs
+            .send("service_98sldl7", "template_x2xvdcb", templateParams)
+            .then(
+              function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                document
+                  .getElementById("form-response")
+                  .classList.remove("hidden");
+                document.getElementById("quote-form").reset();
+              },
+              function (error) {
+                console.error("FAILED...", error);
+                alert(
+                  "Sorry, there was an error sending your message. Please call us directly at (254) 759-9826"
+                );
+              }
+            );
+        });
+
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -610,48 +647,6 @@
           }
         });
       });
-
-      // --- EMAILJS FORM SUBMISSION ---
-      const form = document.getElementById("quote-form");
-      const responseMsg = document.getElementById("form-response");
-
-      if (form) {
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // --- HONEYPOT SPAM CHECK ---
-          if (document.getElementById("company").value.trim() !== "") {
-            console.warn("Spam detected: hone_ypot field was filled.");
-            return; // Block spam submissions
-          }
-
-          // --- ACTION: SEND EMAIL AND SMS NOTIFICATIONS ---
-          const serviceID = "service_ykud4sz";
-          const emailTemplateID = "template_ccwj6mm"; // Your main email template
-          const smsTemplateID = "template_qqd8j1c"; // Your SMS template
-
-          // --- THE FIX IS HERE ---
-          // We are using the 'form' variable directly instead of 'this'
-          const sendEmail = emailjs.sendForm(serviceID, emailTemplateID, form);
-          const sendSMS = emailjs.sendForm(serviceID, smsTemplateID, form);
-
-          // Wait for both promises to complete
-          Promise.all([sendEmail, sendSMS])
-            .then(() => {
-              // On success for both:
-              responseMsg.classList.remove("hidden"); // Show success message
-              form.reset(); // Clear the form
-              console.log("✅ Email and SMS sent successfully");
-            })
-            .catch((error) => {
-              // On failure of either:
-              console.error("EmailJS Error:", error);
-              alert(
-                "Sorry, there was an error sending your message. Please call us directly at (254) 759-9826"
-              );
-            });
-        });
-      }
     </script>
   </body>
 </html>
